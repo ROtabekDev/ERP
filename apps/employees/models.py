@@ -23,7 +23,7 @@ class Employee(BaseModel):
                               default='employees/employee/image/default-user.png')
     resume_file = models.FileField('CV', upload_to='employees/employee/resume_file/')
     salary = models.DecimalField('Maoshi', max_digits=10, decimal_places=2)
-    address = models.ForeignKey('Address', on_delete=models.CASCADE, related_name='employees')
+    address = models.ForeignKey('Address', on_delete=models.CASCADE, related_name='employees', null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
