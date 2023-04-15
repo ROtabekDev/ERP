@@ -58,6 +58,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
     'django_filters',
+    "phonenumber_field",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
@@ -170,3 +171,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+PHONENUMBER_DEFAULT_REGION = 'UZ'

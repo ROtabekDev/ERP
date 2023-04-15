@@ -2,6 +2,8 @@ from django.db import models
 
 from helpers.models import BaseModel
 
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 class Gender(models.TextChoices):
     Male = "Male", "Erkak"
@@ -13,7 +15,7 @@ class Employee(BaseModel):
 
     first_name = models.CharField('Ismi', max_length=150)
     last_name = models.CharField('Familiyasi', max_length=150)
-    phone_number = models.CharField('Telefon raqami', max_length=20)
+    phone_number = PhoneNumberField('Telefon raqami', max_length=20)
     position = models.ForeignKey('Position', on_delete=models.CASCADE, related_name='employees',
                                  verbose_name='Lavozimi')
     birthday = models.DateField('Tug`ilgan sanasi')

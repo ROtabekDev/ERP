@@ -4,15 +4,17 @@ from helpers.models import BaseModel
 
 from apps.employees.models import Gender
 
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 class Intern(BaseModel):
     """Amaliyotchilar uchun model"""
 
     first_name = models.CharField('Ismi', max_length=150)
     last_name = models.CharField('Familiyasi', max_length=150)
-    phone_number = models.CharField('Telefon raqami', max_length=20)
+    phone_number = PhoneNumberField('Telefon raqami', max_length=20)
     direction = models.ForeignKey('Direction', on_delete=models.CASCADE, related_name='interns',
-                                 verbose_name='Yo`nalishi')
+                                  verbose_name='Yo`nalishi')
     birthday = models.DateField('Tug`ilgan sanasi')
     age = models.PositiveIntegerField('Yoshi')
     gender = models.CharField('Jinsi', max_length=15, choices=Gender.choices)
