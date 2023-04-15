@@ -10,7 +10,7 @@ class AttendanceTests(APITestCase):
 
     def setUp(self):
         self.position1 = Position.objects.create(
-            title='Tean lead :)'
+            title='Team lead :)'
         )
         self.position2 = Position.objects.create(
             title='Backend developer'

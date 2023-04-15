@@ -11,7 +11,7 @@ class AttendanceCreateAPIViewTestCase(APITestCase):
 
     def setUp(self):
         self.position = Position.objects.create(
-            title='Tean lead :)'
+            title='Team lead :)'
         )
 
         self.employee = Employee.objects.create(
